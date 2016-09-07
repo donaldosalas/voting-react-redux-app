@@ -1,6 +1,8 @@
 import { expect } from 'chai';
 import { List, Map } from 'immutable';
 
+import { setEntries } from '../src/core';
+
 describe('immutability', () => {
 	// show that incrementing a number is an immutable process
 	describe('a number', () => {
@@ -59,7 +61,7 @@ describe('immutability', () => {
 				movies => movies.push(movie)
 			);
 		}
-		
+
 		it('is immutable', () => {
 			let state = Map({
 				movies: List.of('Trainspotting', '28 Days Later')
