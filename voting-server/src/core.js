@@ -34,13 +34,13 @@ export function next(state) {
 	}
 }
 
-export function vote(state, entry) {
+export function vote(voteState, entry) {
 	// updateIn() arguments:
 	// 1. nested keys to get to target value
 	// 2. if there is no value at the entry, assign the value 0
 	// 3. if there is a value, call function with 'tally' as the present value
-	return state.updateIn(
-		['vote', 'tally', entry],
+	return voteState.updateIn(
+		['tally', entry],
 		0,
 		tally => tally + 1
 	);
