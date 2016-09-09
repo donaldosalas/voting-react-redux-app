@@ -1,5 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+
+// react components
 import Winner from './Winner';
 import Vote from './Vote';
 
