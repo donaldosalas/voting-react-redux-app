@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
 // redux
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 // reducer
 import { reducer } from './reducer';
 // components
@@ -28,7 +29,9 @@ const routes = <Route component={ App }>
 </Route>;
 
 ReactDOM.render(
-	<Router history={hashHistory}>{ routes }</Router>,
+	<Provider store={ store }>
+		<Router history={hashHistory}>{ routes }</Router>
+	</Provider>,
 	document.getElementById('app')
 );
 
