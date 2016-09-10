@@ -113,9 +113,8 @@ describe('application logic', () => {
 		it('creates a tally for the voted entry', () => {
 			const state = Map({
 					pair: List.of('Trainspotting', '28 Days Later')
-				}),
-				entries: List()
-			});
+				});
+
 			const nextState = vote(state, 'Trainspotting');
 			
 			expect(nextState).to.equal(Map({
@@ -124,6 +123,7 @@ describe('application logic', () => {
 						'Trainspotting': 1
 					})
 			}));
+		});
 
 		it('adds to existing tally for the voted entry', () => {
 			const state = Map({
