@@ -5,6 +5,8 @@ import { Router, Route, hashHistory } from 'react-router';
 // redux
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+// socket.io
+import io from 'socket.io-client';
 // reducer
 import reducer from './reducer';
 // components
@@ -22,6 +24,11 @@ store.dispatch({
 		}
 	}
 });
+
+const socket = io(`${location.protocol}//${location.hostname}:8090`);
+socket.on('state', state => 
+	store.dispatch({ type: 'SET_STATE', state })
+);
 
 const routes = <Route component={ App }>
 	<Route path="/results" component={ ResultsContainer } />
