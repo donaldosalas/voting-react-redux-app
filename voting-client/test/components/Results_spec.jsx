@@ -12,7 +12,7 @@ import { List, Map } from 'immutable';
 import { expect } from 'chai';
 
 // react component(s)
-import Results from '../../src/components/Results';
+import { Results } from '../../src/components/Results';
 
 describe('Results', () => {
 

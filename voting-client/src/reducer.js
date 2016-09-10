@@ -9,5 +9,5 @@ export default function(state = Map(), action) {
 		case 'SET_STATE':
 			return setState(state, action.state);
 	}
-	return state
+	return state;
 }

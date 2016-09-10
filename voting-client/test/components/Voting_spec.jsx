@@ -1,3 +1,4 @@
+// react
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -5,11 +6,11 @@ import {
 	scryRenderedDOMComponentsWithTag,
 	Simulate
 } from 'react-addons-test-utils';
-
+// test
 import { expect } from 'chai';
 import { List } from 'immutable';
-
-import Voting from '../../src/components/Voting';
+// component
+import { Voting } from '../../src/components/Voting';
 
 
 describe('Voting', () => {
