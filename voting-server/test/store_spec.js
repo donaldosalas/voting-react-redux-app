@@ -1,7 +1,7 @@
-import { Map, formJS } from 'immutable';
+import { Map, fromJS } from 'immutable';
 import { expect } from 'chai';
 
-import makeStore form '../src/store';
+import makeStore from '../src/store';
 
 describe('store', () => {
 
