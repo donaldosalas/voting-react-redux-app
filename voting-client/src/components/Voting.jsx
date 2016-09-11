@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 // react components
 import Winner from './Winner';
 import Vote from './Vote';
+// action creators
+import * as actionCreators from '../action_creators';
 
 // presentational component; 'pure' component;'dumb' component
 export const Voting = React.createClass({
@@ -22,10 +24,14 @@ export const Voting = React.createClass({
 function mapStateToProps(state) {
 	return {
 		pair: state.getIn(['vote', 'pair']),
+		hasVoted: state.get('hasVoted'),
 		winner: state.get('winner')
 	};
 }
 
 // connect creates a connected version of the Voting component; connected to redux store;
 // 'connected' component;'smart' component
-export const VotingContainer = connect(mapStateToProps)(Voting);
+export const VotingContainer = connect(
+	mapStateToProps,
+	actionCreators
+)(Voting);
